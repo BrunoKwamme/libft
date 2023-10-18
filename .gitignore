@@ -1,3 +1,7 @@
 # exec files
 *a.exe
 *a.out
+
+# main
+
+*main.c*

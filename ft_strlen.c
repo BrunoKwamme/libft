@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:20:49 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/10/18 16:20:49 by bkwamme          ###   ########.fr       */
+/*   Created: 2023/10/18 18:52:04 by bkwamme           #+#    #+#             */
+/*   Updated: 2023/10/18 18:52:04 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main(int argc, char *argv[])
+size_t	ft_strlen(const char *s)
 {
-	printf("%s\n", ft_strnstr(argv[1], argv[2], ft_atoi(argv[3])));
+	size_t	i;
 
-	return (0);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
