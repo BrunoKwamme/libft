@@ -1,1 +1,3 @@
-a.exe/*
+# exec files
+*a.exe
+*a.out
