@@ -39,11 +39,3 @@ int ft_atoi(char *str)
         return (-atoi);
     return (atoi);
 }
-
-int main()
-{
-    printf ("%d\n", ft_atoi("                -25 48"));
-    printf ("%d\n", atoi("        -25a5"));
-
-    return 0;
-}
