@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                      :+:      :+:    :+:    */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:44:50 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/10/18 16:44:50 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:42:05 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	lastPosition;
+	int	last_position;
 	int	i;
 
-	lastPosition = -1;
+	last_position = -1;
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			lastPosition = i;
+			last_position = i;
 		i++;
 	}
-	if (lastPosition != -1)
-		return ((char *) &s[lastPosition]);
+	if (last_position != -1)
+		return ((char *) &s[last_position]);
 	else if (c == '\0')
-		return ((char *) &s[i]);
+		return ((char *)&s[i]);
 	return (NULL);
 }

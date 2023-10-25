@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:52:04 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/10/18 18:52:04 by bkwamme          ###   ########.fr       */
+/*   Created: 2023/10/17 14:41:45 by bkwamme           #+#    #+#             */
+/*   Updated: 2023/10/20 10:05:31 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }
