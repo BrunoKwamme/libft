@@ -43,19 +43,28 @@ SOURCES=ft_isalpha.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lstsize.c
 
 OBJS = $(SOURCES:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS) 
+	$(AR) $(NAME) $(OBJS)
 so:
 	$(CC) -nostartfiles -fPIC $(CC_FLAGS) $(SOURCES)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 .c.o:
 	$(CC) $(CC_FLAGS) -c $(<) -o $(<:.c=.o)
-bonus: 
+bonus:
 	clear
 
 re: fclean all
@@ -64,4 +73,4 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)	
+	$(RM) $(NAME)
