@@ -62,10 +62,8 @@ $(NAME): $(OBJS)
 so:
 	$(CC) -nostartfiles -fPIC $(CC_FLAGS) $(SOURCES)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)
-.c.o:
-	$(CC) $(CC_FLAGS) -c $(<) -o $(<:.c=.o)
-bonus:
-	clear
+
+.c.o:$(CC) $(CC_FLAGS) -c $(<) -o $(<:.c=.o)
 
 re: fclean all
 
