@@ -80,8 +80,6 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			i += ft_putword(arr, &s[i], c, word);
-			if (!arr[word])
-				return (NULL);
 			word++;
 		}
 		else

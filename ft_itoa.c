@@ -16,24 +16,20 @@ static int ft_decimal_count(int n)
 {
 	int	i;
 
+	i = 1;
 	if (n == -2147483648)
 		return (10);
 	else if (n < 0)
 		n *= -1;
-	if (n > 9)
+	while (n > 9)
 	{
-		while (n > 0)
-		{
-			n /= 10;
-			i++;
-		}
+		i++;
+		n /= 10;
 	}
-	else
-		return (1);
 	return (i);
 }
 
-static char *ft_negative_itoa(int n)
+static char	*ft_negative_itoa(int n)
 {
 	char	*itoa;
 	int	decimal_count;
@@ -42,30 +38,30 @@ static char *ft_negative_itoa(int n)
 	itoa = (char *) malloc (sizeof(char) * decimal_count + 2);
 	if (!itoa)
 		return NULL;
-	itoa[decimal_count] = '\0';
+	itoa[++decimal_count] = '\0';
 	if (n == -2147483648)
 	{
-		itoa[--decimal_count] = 8;
+		itoa[--decimal_count] = '8';
 		n = 214748364;
 	}
 	else
 		n *= -1;
-	while (0 < decimal_count)
+	while (1 < decimal_count)
 	{
 		itoa[--decimal_count] = (n % 10) + 48;
 		n /= 10;
 	}
-	itoa[--decimal_count] = '-';
+	itoa[0] = '-';
 	return itoa;
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*itoa;
 	int	decimal_count;
 
 	if (n < 0)
-		return (ft_negative_itoa(n));
+		return ft_negative_itoa(n);
 	decimal_count = ft_decimal_count(n);
 	itoa = (char *) malloc (sizeof(char) * decimal_count + 1);
 	if (!itoa)
@@ -77,10 +73,4 @@ char *ft_itoa(int n)
 		n /= 10;
 	}
 	return itoa;
-}
-
-int main ()
-{
-	printf("%d\n", ft_decimal_count(10));
-	return 0;
 }
