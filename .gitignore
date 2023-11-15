@@ -9,3 +9,11 @@
 # vscode
 
 .vscode
+
+# .so
+
+*libft.so
+
+# tester
+
+*tester*

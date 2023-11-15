@@ -43,6 +43,7 @@ SOURCES=ft_isalpha.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_split.c \
 		ft_lstadd_back.c \
 		ft_lstadd_front.c \
 		ft_lstclear.c \

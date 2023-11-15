@@ -26,5 +26,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		front_index++;
 	while (back_index > 0 && ft_strchr(set, s1[back_index]) != NULL)
 		back_index--;
-	return (ft_substr(s1, back_index - front_index, (back_index - front_index + 1)));
+	return (ft_substr(s1, front_index, (back_index - front_index + 1)));
 }
