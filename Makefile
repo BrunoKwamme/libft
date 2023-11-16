@@ -6,7 +6,7 @@
 #    By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 10:06:49 by bkwamme           #+#    #+#              #
-#    Updated: 2023/10/25 11:26:49 by bkwamme          ###   ########.fr        #
+#    Updated: 2023/11/16 09:17:47 by bkwamme          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ AR = ar rcs
 CC_FLAGS=-Wall -Wextra -Werror
 
 SOURCES=ft_isalpha.c \
+		ft_itoa.c \
+		ft_strmapi.c \
 		ft_strtrim.c \
 		ft_strjoin.c \
 		ft_isdigit.c \
@@ -41,41 +43,44 @@ SOURCES=ft_isalpha.c \
 		ft_memchr.c \
 		ft_strnstr.c \
 		ft_atoi.c \
+		ft_split.c \
 		ft_calloc.c \
 		ft_strdup.c \
-		ft_split.c \
-		ft_itoa.c \
-		ft_strmapi.c \
+		ft_striteri.c \
 		ft_putendl_fd.c \
-		ft_putchar_fd.c \
-		ft_putstr_fd.c \
 		ft_putnbr_fd.c \
-		ft_lstadd_back.c \
-		ft_lstadd_front.c \
-		ft_lstclear.c \
-		ft_lstdelone.c \
-		ft_lstiter.c \
-		ft_lstlast.c \
-		ft_lstmap.c \
-		ft_lstnew.c \
-		ft_lstsize.c
+		ft_putstr_fd.c \
+		ft_putchar_fd.c
+
+BONUS_SOURCES=ft_lstadd_back_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c
 
 OBJS = $(SOURCES:.c=.o)
+
+BONUS_OBJS = $(BONUS_SOURCES:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-so:
-	$(CC) -nostartfiles -fPIC $(CC_FLAGS) $(SOURCES)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(AR) $(NAME) $(OBJS) 
 
-.c.o:$(CC) $(CC_FLAGS) -c $(<) -o $(<:.c=.o)
+.c.o:
+	$(CC) $(CC_FLAGS) -c $< -o $@
+
+bonus: $(NAME) $(BONUS_OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS)
 
 re: fclean all
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME)	
