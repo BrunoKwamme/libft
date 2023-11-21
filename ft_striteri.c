@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 07:35:14 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/11/16 07:48:14 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/11/16 14:37:04 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
-	char	*str;
 
-	str = ft_strdup(s);
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{
-		f(i ,str);
+		f(i, &s[i]);
 		i++;
 	}
-	str[i] = '\0';
 }

@@ -6,13 +6,13 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:46:39 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/10/25 07:34:15 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/11/16 18:04:53 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 	char	*str;
@@ -24,5 +24,4 @@ void	*ft_bzero(void *s, size_t n)
 		str[i] = '\0';
 		i++;
 	}
-	return (s);
 }

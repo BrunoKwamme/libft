@@ -6,13 +6,13 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 00:34:55 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/11/15 00:34:55 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:35:30 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 

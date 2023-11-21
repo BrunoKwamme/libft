@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 08:03:37 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/10/25 10:06:43 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/11/16 14:34:34 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*substr;
 
+	if (!s)
+		return (NULL);
 	if (start >= ft_strlen(s))
 		len = 0;
 	substr = malloc (sizeof(char) * (len + 1));

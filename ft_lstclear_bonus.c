@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:14:33 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/11/02 11:14:33 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:09:20 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *swap;
+	t_list	*node_swap;
 
-	while (lst)
+	if (!lst || !del)
+		return ;
+	while (*lst)
 	{
-		swap = (*lst)->next;
+		node_swap = (*lst)->next;
 		ft_lstdelone((*lst), del);
-		(*lst) = swap;
+		(*lst) = node_swap;
 	}
+	(*lst) = NULL;
 }

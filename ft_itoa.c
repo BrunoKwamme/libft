@@ -6,13 +6,13 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 01:06:16 by bkwamme           #+#    #+#             */
-/*   Updated: 2023/11/15 01:06:16 by bkwamme          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:34:58 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_decimal_count(int n)
+static int	ft_decimal_count(int n)
 {
 	int	i;
 
@@ -32,12 +32,12 @@ static int ft_decimal_count(int n)
 static char	*ft_negative_itoa(int n)
 {
 	char	*itoa;
-	int	decimal_count;
+	int		decimal_count;
 
 	decimal_count = ft_decimal_count(n);
 	itoa = (char *) malloc (sizeof(char) * decimal_count + 2);
 	if (!itoa)
-		return NULL;
+		return (NULL);
 	itoa[++decimal_count] = '\0';
 	if (n == -2147483648)
 	{
@@ -52,25 +52,25 @@ static char	*ft_negative_itoa(int n)
 		n /= 10;
 	}
 	itoa[0] = '-';
-	return itoa;
+	return (itoa);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*itoa;
-	int	decimal_count;
+	int		decimal_count;
 
 	if (n < 0)
-		return ft_negative_itoa(n);
+		return (ft_negative_itoa(n));
 	decimal_count = ft_decimal_count(n);
 	itoa = (char *) malloc (sizeof(char) * decimal_count + 1);
 	if (!itoa)
-		return NULL;
+		return (NULL);
 	itoa[decimal_count] = '\0';
 	while (0 < decimal_count)
 	{
 		itoa[--decimal_count] = (n % 10) + 48;
 		n /= 10;
 	}
-	return itoa;
+	return (itoa);
 }
