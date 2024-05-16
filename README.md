@@ -4,7 +4,7 @@
 
 #### The libft bonus is a kickstart to learning the linked list universe.
 
-#### Its important to understand the objective of the tools inside "source" and "bonus" directories to use them.
+#### It is important to understand the purpose of the tools within the "source" and "bonus" directories in order to use them.
 
 ## USAGE
 
