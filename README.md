@@ -8,20 +8,17 @@
 
 ## USAGE
 
+#### This Makefile command will compile all C files and build "libft.a" wich can be compiled with other C programs for the tooling usage.
 ```
 make
 ```
 
-#### This Makefile command will compile all C files and build "libft.a" wich can be compiled with other C programs for the tooling usage.
-
+#### This command will compile the bonus inside the "libft.a" build.
 ```
 make bonus
 ```
 
-#### This command will compile the bonus inside the "libft.a" build.
-
+#### Use this command to clean all the objects and "libft.a" build.
 ```
 make fclean
 ```
-
-#### Use this command to clean all the objects and "libft.a" build.
